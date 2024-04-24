@@ -14,3 +14,18 @@ export const findCharacters = async (page = 1) => {
     throw error;
   }
 };
+
+export const findCharacterById = async (id) => {
+  try {
+    const response = await fetch(`${BASE_URL}/character/${id}`);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch characters");
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
