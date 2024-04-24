@@ -40,7 +40,7 @@ export default {
 </script> -->
 
 <template>
-  <article class="flex flex-col lg:flex-row border-2 border-[#9fded5] rounded-lg overflow-hidden">
+  <article role="listitem" class="flex flex-col lg:flex-row border-2 border-[#9fded5] rounded-lg overflow-hidden">
     <!-- Imagen -->
     <div class="lg:w-1/3">
       <img 
@@ -54,7 +54,7 @@ export default {
     <!-- Información -->
     <div class="p-4 lg:w-2/3">
       <div class="mb-4">
-        <h2 class="text-xl font-bold">
+        <h2 class="text-xl font-bold hover:text-[#d5c8b8] hover:cursor-pointer">
           {{ character.name }}
         </h2>
         <p class="flex items-center capitalize">

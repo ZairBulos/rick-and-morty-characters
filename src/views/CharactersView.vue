@@ -81,18 +81,20 @@ export default {
 </script> -->
 
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 justify-center items-center">
-    <Character v-for="character in characters" :key="character.id" :character="character" />
-  </div>
+  <section>
+    <div role="list" class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
+      <Character v-for="character in characters" :key="character.id" :character="character" />
+    </div>
 
-  <div class="flex gap-8 justify-center items-center p-4">
-    <button @click="loadPreviousPage" :disabled="currentPage <= 1" class="rounded-md py-2 px-3 bg-[#70592d] hover:bg-[#8d7a4a]">
-      Previous
-    </button>
-    <button @click="loadNextPage" :disabled="currentPage >= totalPages" class="rounded-md py-2 px-3 bg-[#70592d] hover:bg-[#8d7a4a]">
-      Next
-    </button>
-  </div>
+    <div class="flex gap-8 justify-center items-center mt-8">
+      <button @click="loadPreviousPage" :disabled="currentPage <= 1" class="rounded-md py-2 px-3 bg-[#70592d] hover:bg-[#8d7a4a]">
+        Previous
+      </button>
+      <button @click="loadNextPage" :disabled="currentPage >= totalPages" class="rounded-md py-2 px-3 bg-[#70592d] hover:bg-[#8d7a4a]">
+        Next
+      </button>
+    </div>
+  </section>
 </template>
 
 <style scoped></style>
