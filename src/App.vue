@@ -8,7 +8,9 @@ import Footer from './components/Footer.vue'
   <Header />
   
   <!-- Contenido -->
-  <main class="p-8"></main>
+  <main class="p-8">
+    <router-view />
+  </main>
 
   <!-- Pie de página -->
   <Footer />
