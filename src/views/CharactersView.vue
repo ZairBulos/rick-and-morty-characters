@@ -82,7 +82,7 @@ export default {
 
 <template>
   <section>
-    <div role="list" class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
+    <div role="list" class="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-center">
       <Character v-for="character in characters" :key="character.id" :character="character" />
     </div>
 

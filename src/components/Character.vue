@@ -40,21 +40,24 @@ export default {
 </script> -->
 
 <template>
-  <article role="listitem" class="flex flex-col lg:flex-row border-2 border-[#9fded5] rounded-lg overflow-hidden">
+  <article role="listitem" class="flex flex-col rounded-md border-2 border-[#9fded5] md:flex-row lg:min-h-52">
     <!-- Imagen -->
-    <div class="lg:w-1/3">
-      <img 
+    <figure class="lg:w-1/3">
+      <img
         :src="character.image" 
         :alt="character.name" 
         :title="`${character.name}, Rick and Morty`"
-        class="w-full h-auto lg:h-full" 
+        class="w-full h-full"
+        aria-label="Character image" 
+        role="img"
       />
-    </div>
+      <figcaption class="sr-only">{{ character.name }}</figcaption>
+    </figure>
 
     <!-- Información -->
     <div class="p-4 lg:w-2/3">
-      <div class="mb-4">
-        <h2 class="text-xl font-bold hover:text-[#d5c8b8] hover:cursor-pointer">
+      <div class="space-y-1 mb-4">
+        <h2 class="text-2xl font-bold hover:text-[#d5c8b8]">
           <router-link :to="{ path: `/character/${character.id}` }">{{ character.name }}</router-link>
         </h2>
         <p class="flex items-center capitalize">
@@ -63,15 +66,16 @@ export default {
         </p>
       </div>
 
-      <div class="mb-2">
-        <p class="text-[#d5c8b8]">Origin:</p>
-        <p class="capitalize">{{ character.origin.name }}</p>
-      </div>
-
-      <div>
-        <p class="text-[#d5c8b8]">Last known location:</p>
-        <p>{{ character.location.name }}</p>
-      </div>
+      <ul class="space-y-2 capitalize">
+        <li>
+          <p class="text-[#d5c8b8]">Origin:</p>
+          <p>{{ character.origin.name }}</p>
+        </li>
+        <li>
+          <p class="text-[#d5c8b8]">Last known location:</p>
+          <p>{{ character.location.name }}</p>
+        </li>
+      </ul>
     </div>
   </article>
 </template>
